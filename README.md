@@ -1,2 +1,2 @@
 # Laguerre-Polycrystalline-Microstructures
-MATLAB code for representing grains and polycrystalline microstructures using Laguerre tessellations
+MATLAB functions for generating 3D synthetic polycrystalline microstructures using Laguerre tessellations.
