@@ -1,5 +1,5 @@
 # Laguerre-Polycrystalline-Microstructures
-MATLAB functions for generating 3D synthetic polycrystalline microstructures using Laguerre tessellations. These include fast algorithms for generating grains of prescribed volumes.
+MATLAB functions for generating 3D synthetic polycrystalline microstructures using Laguerre tessellations, including fast algorithms for generating grains of prescribed volumes.
 
 ## Getting started ##
 
@@ -11,7 +11,7 @@ To use these MATLAB functions you must first install
 
 See the Examples folder for examples from the following papers:
 * 
-*
+* Bourne, D.P., Kok, P.J.J., Roper, S.M. & Spanjer, W.D.T. (2020) Laguerre tessellations and polycrystalline microstructures: A fast algorithm for generating grains of given volumes, *Philosophical Magazine*, 100, 2677-2707. [PDF](https://www.tandfonline.com/doi/full/10.1080/14786435.2020.1790053)
 
 ## Licence ##
 
