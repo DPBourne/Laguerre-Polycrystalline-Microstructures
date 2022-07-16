@@ -10,7 +10,7 @@ To use these MATLAB functions you must first install
 ## Examples ##
 
 See the Examples folder for examples from the following papers:
-* 
+* Bourne, D.P., Pearce M. & Roper, S.M. (2022) Geometric modelling of polycrystalline materials: Laguerre tessellations and periodic semi-discrete optimal transport. [ADD LINK TO PDF OF PREPRINT]
 * Bourne, D.P., Kok, P.J.J., Roper, S.M. & Spanjer, W.D.T. (2020) Laguerre tessellations and polycrystalline microstructures: A fast algorithm for generating grains of given volumes, *Philosophical Magazine*, 100, 2677-2707. [PDF](https://www.tandfonline.com/doi/full/10.1080/14786435.2020.1790053)
 
 ## Licence ##
