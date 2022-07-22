@@ -28,7 +28,7 @@ X=rand(N,d)*diag(bx);
 target_vols=zeros(N,1);
 
 idx=1;
-for j=1:mp,
+for j=1:mp
     tv=relative_vols(j)*ones(n(j),1);
     target_vols(idx:idx+n(j)-1,:)=tv;
     idx=idx+n(j);
