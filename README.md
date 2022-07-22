@@ -8,7 +8,7 @@ To use these MATLAB functions you must first install
 * [MATLAB-SDOT](https://github.com/DPBourne/MATLAB-SDOT)
 * [MatGeom](https://github.com/mattools/matGeom)
 
-Replace the file matGeomn/meshes3d/intersectPlaneMesh.m with the version in this repository.
+Replace the file `matGeom/meshes3d/intersectPlaneMesh.m` with the version in this repository.
 
 ## Examples ##
 
