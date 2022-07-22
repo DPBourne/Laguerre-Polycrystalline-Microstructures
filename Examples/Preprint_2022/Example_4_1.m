@@ -39,16 +39,12 @@ bx=[L1,L2,L3];
 % Specify the desired volumes of the grains, which are drawn from a 
 % log-normal distribution
 
+ln_mean=1; % mean
 stdev=0.35; % standard deviation
+Sigma=sqrt((log(1+(std_dev/ln_mean)^2))); % log-normal parameter sigma
+Mu=-0.5*sigma^2+log(ln_mean); % log-normal parameter mu
 
-% Define the log-normal parameter sigma, which is related to the standard
-% deviation by stdev=sqrt(exp(Sigma^2)-1)
-Sigma=sqrt(log(1+stdev^2)); % log-normal parameter sigma  
-
-% Define the log-normal parameter mu corresponding to mean=1
-Mu=-0.5*Sigma^2;
-
-% Draw the radii from the log normal distribution
+% Draw the radii from the log-normal distribution
 radii=lognrnd(Mu,Sigma,[n,1]);
 
 % Calculate the corresponding grain volumes 
@@ -101,6 +97,7 @@ toc
 
 percentage_errors=100*abs(actual_vols-target_vols)./target_vols;
 plotErrors(percentage_errors);
+drawnow
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

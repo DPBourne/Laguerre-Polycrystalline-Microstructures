@@ -4,8 +4,9 @@
 % polycrystalline materials: Laguerre tessellations and periodic 
 % semi-discrete optimal transport' by D.P. Bourne, M. Pearce & S.M. Roper.
 %
-% In this example we monitor the number of Newton iterations and back-tracking steps
-% in 100 draws of 100,000 log-normally distributed grain volumes.
+% In this example we monitor the number of Newton iterations and 
+% backtracking steps in 100 draws of 100,000 log-normally distributed 
+% grain volumes.
 
 clear
 
@@ -21,27 +22,27 @@ periodic=true;
 
 percent_tol=1;
 
-%%% Specify different number of seeds to be considered
+%%% Specify number of seeds (grains)
 
-n=[1000];
+n=[1000]; % Set n=[100000] to reproduce example from paper 
 nn=length(n);
 
-%%% Specify number of experiments for each number of seeds
+%%% Specify number of experiments
+
 nexp=100;
 
 %%% Log-normal backtracking
 
 % Parameters in log-normal distribution
-ln_mean=1;
-std_dev=0.35;
-sigma=sqrt((log(1+(std_dev/ln_mean)^2)));
-mu=-0.5*sigma^2;
+ln_mean=1; % mean
+std_dev=0.35; % standard deviation
+sigma=sqrt((log(1+(std_dev/ln_mean)^2))); % log-normal parameter sigma
+mu=-0.5*sigma^2+log(ln_mean); % log-normal parameter mu
 
 disp('Log-normal')
-for idx_n=1:nn,
+for idx_n=1:nn
     
-    % For each number of cells
-
+    % For each number of seeds
     disp(sprintf('Calculating run times for n = %d',n(idx_n)));
     
     % Initial guess is always w=0
@@ -54,9 +55,14 @@ for idx_n=1:nn,
         % Seed locations
         X=rand(n(idx_n),3);
 
-        % Target Volumes 
-        rad=lognrnd(mu,sigma,n(idx_n),1);
-        target_vols=(rad.^3)/(prod(bx)*sum(rad.^3));
+        % Compute target volumes: 
+        % Draw radii from log-normal distribution
+        rad=lognrnd(mu,sigma,n(idx_n),1); 
+        % Calculate the corresponding grain volumes 
+        % (we don't need the factor 4pi/3 as we'll be renormalising)
+        target_vols=rad.^3;
+        % Normalise the volumes so that they add to the volume of the box
+        target_vols=target_vols*prod(bx)/sum(target_vols); % target volumes of the grains
         
         % Store the X and target_vols in case later interrogation is required
         X_ln{idx_n,idx_exp}=X;
@@ -73,9 +79,9 @@ for idx_n=1:nn,
         w_ln{idx_n,idx_exp}=w;
 
         % Store the deails of each Newton iteration and the error after each Newton iteration
-        runtime_ln(idx_n,idx_exp)=t;
-        back_track_ln{idx_n,idx_exp}=back_track_steps;
-        newton_errors_ln{idx_n,idx_exp}=newton_step_errors;
+        runtime_ln(idx_n,idx_exp)=t; % run times 
+        back_track_ln{idx_n,idx_exp}=back_track_steps; % number of backtracking steps
+        newton_errors_ln{idx_n,idx_exp}=newton_step_errors; % volume errors
     end
 
     disp(sprintf('Average run time %f',mean(runtime_ln(idx_n,:)')));
@@ -83,13 +89,12 @@ end
 
 %% Plot the results
 
-
 % Assume that n is a 1 x nn array of cell numbers
 % Assume that back_track_ln is an nn x nexp cell array of backtracking information
 
 [nn,nexp]=size(back_track_ln);
 
-for k=1:nn,
+for k=1:nn
     back_track_exp=back_track_ln(k,:);
 
     % First find maximum number of Newton steps
@@ -97,29 +102,29 @@ for k=1:nn,
     mns=max(newt_steps);
     data=-1*ones(nexp,mns);
 
-    % Extract the data from the back-tracking cell array
-    for j=1:nexp,
+    % Extract the data from the backtracking cell array
+    for j=1:nexp
         data(j,1:length(back_track_exp{j}))=back_track_exp{j};
     end
 
     % Sort the data for ease of visualisation
     data=sortrows(data);
 
-    % The maximum number of back-tracking steps
+    % The maximum number of backtracking steps
     mbs=max(max(data));
 
     % Make a new figure, one for each number of cells
     figure(k)
     
-    % Plot the number of back-tracking steps
+    % Plot the number of backtracking steps
     image(1:mns,1:nexp,data,'CDataMapping','scaled')
+    title(sprintf('$n=%d$',n(k)),'Interpreter','latex','Fontsize',12)
 
     % Make a discrete palette
     cmap=jet(mbs+2);
     % Make -1 correspond to white
     cmap(1,:)=[1 1 1];
 
-    
     colormap(cmap);
     cbh=colorbar;
     ch=(mbs)/(mbs+1);
@@ -138,11 +143,11 @@ for k=1:nn,
     set(gca,'XTick',1:mns);
     
     hold on
-    for l=1:mns-1,
+    for l=1:mns-1
         plot(0.5+[l l],[0.5,nexp+0.5],'k');
     end
 
-    for l=1:nexp,
+    for l=1:nexp
         % Number of Newton steps
         ns=sum(data(l,:)>=0);
         plot([0 ns+0.5],0.5+[1 1]*l,'w','LineWidth',0.25);

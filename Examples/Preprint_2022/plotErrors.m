@@ -18,6 +18,6 @@ function h=plotErrors(errordata)
     xlim([0,max(errordata)])
     set(gca,'YScale','log','yminortick','on','tickdir','in','XScale','log');
     set(gca,'XTick',10.^-(16:-2:0));
-    xlabel('Relative percentage error','FontSize',14,'interpreter','latex');
+    xlabel('Percentage error','FontSize',14,'interpreter','latex');
     ylabel('Number of grains','Fontsize',14,'interpreter','latex');
 end
