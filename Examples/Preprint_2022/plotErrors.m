@@ -13,8 +13,6 @@ function h=plotErrors(errordata)
     cdx=sort(errordata);
     cdy=length(errordata):-1:1;
     
-    %    [cdx,cdy]=cdnum(errordata);
-    %    cdy=cdy(end)+1-cdy;
     h=figure;
     plot(cdx,cdy,'b','LineWidth',2);
     xlim([0,max(errordata)])
@@ -23,4 +21,3 @@ function h=plotErrors(errordata)
     xlabel('Relative percentage error','FontSize',14,'interpreter','latex');
     ylabel('Number of grains','Fontsize',14,'interpreter','latex');
 end
-
