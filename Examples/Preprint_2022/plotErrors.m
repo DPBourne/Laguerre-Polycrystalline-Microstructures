@@ -10,8 +10,7 @@ function h=plotErrors(errordata)
 %
 %  h : figure handle
 
-
-    cdx=errordata;
+    cdx=sort(errordata);
     cdy=length(errordata):-1:1;
     
     %    [cdx,cdy]=cdnum(errordata);
@@ -19,8 +18,9 @@ function h=plotErrors(errordata)
     h=figure;
     plot(cdx,cdy,'b','LineWidth',2);
     xlim([0,max(errordata)])
-    set(gca,'YScale','log','yminortick','on','tickdir','in');
-    xlabel('Percentage error','FontSize',14,'interpreter','latex');
+    set(gca,'YScale','log','yminortick','on','tickdir','in','XScale','log');
+    set(gca,'XTick',10.^-(16:-2:0));
+    xlabel('Relative percentage error','FontSize',14,'interpreter','latex');
     ylabel('Number of grains','Fontsize',14,'interpreter','latex');
 end
 
