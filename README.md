@@ -6,7 +6,7 @@ MATLAB functions for generating 3D synthetic polycrystalline microstructures usi
 To use these MATLAB functions you must first install
 * [MATLAB-Voro](https://github.com/smr29git/MATLAB-Voro)
 * [MATLAB-SDOT](https://github.com/DPBourne/MATLAB-SDOT)
-* [MatGeom](https://github.com/mattools/matGeom)
+* [MatGeom](https://github.com/mattools/matGeom) by David Legland
 
 Replace the file `matGeom/meshes3d/intersectPlaneMesh.m` with the version in this repository.
 
@@ -22,6 +22,10 @@ See LICENCE.md
 
 ## Main contributors ##
 
+These MATLAB functions were written by
+
 * [Steve Roper](https://www.gla.ac.uk/schools/mathematicsstatistics/staff/stevenroper/#), University of Glasgow
 * [David Bourne](http://www.macs.hw.ac.uk/~db92/), Heriot-Watt University and the Maxwell Institute for Mathematical Sciences
 * Mason Pearce, Heriot-Watt University and the Maxwell Institute for Mathematical Sciences
+
+This work was in collaboration with Piet Kok (Universiteit Gent, Tata Steel) & Wil Spanjer (Tata Steel).
