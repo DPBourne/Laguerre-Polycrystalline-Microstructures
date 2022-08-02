@@ -1,4 +1,4 @@
-# Laguerre-Polycrystalline-Microstructures
+# LPM: Laguerre-Polycrystalline-Microstructures
 MATLAB functions for generating 3D synthetic polycrystalline microstructures using Laguerre tessellations, including fast algorithms for generating grains of prescribed volumes.
 
 ## Getting started ##
