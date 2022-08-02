@@ -1,0 +1,9 @@
+The folder `Philosophical_Magazine_2020` contains examples from the paper
+
+* Bourne, D.P., Kok, P.J.J., Roper, S.M. & Spanjer, W.D.T. (2020) Laguerre tessellations and polycrystalline microstructures: A fast algorithm for generating grains of given volumes, *Philosophical Magazine*, 100, 2677-2707. [PDF](https://www.tandfonline.com/doi/full/10.1080/14786435.2020.1790053)
+
+The folder `Preprint_2022` contains examples from the paper
+
+* Bourne, D.P., Pearce, M. & Roper, S.M. (2022) Geometric modelling of polycrystalline materials: Laguerre tessellations and periodic semi-discrete optimal transport. [PDF](https://arxiv.org/abs/2207.12036)
+
+The other files in this directory are visualisation files used for both papers.
