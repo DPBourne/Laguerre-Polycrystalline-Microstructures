@@ -75,6 +75,7 @@ if(epsilon2<=0)
     warning('With the w_0 specified, there is at least one zero-volume cell')
     EXITFLAG=0;
     w_0=[]; max_percent_err=[]; v_0=[];
+    back_track_steps=[]; newton_step_errors=[]; w_steps=[];
     return
 end
 
@@ -106,29 +107,22 @@ newton_step_w=[];
 
 ns=1;
 
-H_mod=sparse(n-1,n-1);
-
 w_steps=w_0;
 
 %% Start the while loop
 while(err_0>tol)
 
-    %    disp(sprintf('Newton step %d',ns));
     % Obtain the gradient and Hessian
     [~,Dg,H,~]=kantorovich(w_0,X,target_vols,bx,periodic);
 
-    %disp('Calculated kantorovich');
     % The Hessian H is singular, with one-dimensional kernel (1,1,...,1).
     % Truncate H to produce the non-singular H_mod
-    
     H_mod = H(1:n-1,1:n-1);
     clear H;
-    %    disp('Solving linear system');
+    
     % Solve the linear system
     v_k(1:n-1) = -H_mod\Dg(1:n-1);
     v_k(n) = 0;
-
-    %disp(sprintf('\tSolved'));
     
     % Backtracking
     backtracking=true;
@@ -136,7 +130,6 @@ while(err_0>tol)
     l=0;
             
     while(backtracking)
-        %   disp(sprintf('\t\tBacktracking step %d',l));
         
         % Newton step: proposed new weights
         w_l=w_0+v_k*2^(-l);
@@ -194,19 +187,9 @@ while(err_0>tol)
 
     w_steps=[w_steps,w_0];
     
-    % Weights after the Newton step
-    %    newton_step_w=[newton_step_w,w_0];
-    
 end
-
-%disp(sprintf('\t\t\tCompleted Newton steps'));
 
 max_percent_err=max(abs(v_0-target_vols)./target_vols)*100;
 EXITFLAG=1;
-
-% Store the information about each Newton step in a structure 'report'
-%report.weights=newton_step_w;
-%report.error=newton_step_errors;
-%report.backtracking=back_track_steps;
 
 end
