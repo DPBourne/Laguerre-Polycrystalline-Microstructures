@@ -72,7 +72,7 @@ for k=1:numLloyd
             [w,vol_error,actual_vols,EXITFLAG]=...
                 SDOT_damped_Newton(w,X,target_vols,bx,periodic,tol);
             if(EXITFLAG==0)
-                warning('Switch to using w=0 for the initial guess for damped Newton')
+                warning('Switch to using w_0=0 for the initial guess for damped Newton')
                 [w,vol_error,actual_vols]=...
                     SDOT_damped_Newton(zeros(size(target_vols)),X,target_vols,bx,periodic,tol);
             end
