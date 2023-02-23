@@ -13,7 +13,7 @@ Replace the file `matGeom/meshes3d/intersectPlaneMesh.m` with the version in thi
 ## Examples ##
 
 See the `Examples` folder for examples from the following papers:
-* Bourne, D.P., Pearce, M. & Roper, S.M. (2023) Geometric modelling of polycrystalline materials: Laguerre tessellations and periodic semi-discrete optimal transport, *Mechanics Research Communications*, 127, 104023 [PDF](https://www.sciencedirect.com/science/article/pii/S0093641322001550)
+* Bourne, D.P., Pearce, M. & Roper, S.M. (2023) Geometric modelling of polycrystalline materials: Laguerre tessellations and periodic semi-discrete optimal transport, *Mechanics Research Communications*, 127, 104023. [PDF](https://www.sciencedirect.com/science/article/pii/S0093641322001550)
 * Bourne, D.P., Kok, P.J.J., Roper, S.M. & Spanjer, W.D.T. (2020) Laguerre tessellations and polycrystalline microstructures: A fast algorithm for generating grains of given volumes, *Philosophical Magazine*, 100, 2677-2707. [PDF](https://www.tandfonline.com/doi/full/10.1080/14786435.2020.1790053)
 
 ## Licence ##
