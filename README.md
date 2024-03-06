@@ -20,6 +20,12 @@ See the `Examples` folder for examples from the following papers:
 
 See LICENCE.md
 
+## Related software ##
+
+* [pyAPD](https://github.com/mbuze/PyAPD) - our 'sister repository' for computing *anisotropic* Laguerre diagrams with grains of prescribed volumes
+* [DREAM.3D](https://github.com/BlueQuartzSoftware/DREAM3D)
+* [Neper](https://github.com/neperfepx/neper)
+
 ## Main contributors ##
 
 These MATLAB functions were written by
