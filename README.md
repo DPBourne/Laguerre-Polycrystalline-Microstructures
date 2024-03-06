@@ -24,6 +24,7 @@ See LICENCE.md
 
 * [pyAPD](https://github.com/mbuze/PyAPD) - our 'sister repository' for computing *anisotropic* Laguerre diagrams with grains of prescribed volumes
 * [DREAM.3D](https://github.com/BlueQuartzSoftware/DREAM3D)
+* [Kanapy](https://github.com/ICAMS/Kanapy)
 * [Neper](https://github.com/neperfepx/neper)
 
 ## Main contributors ##
