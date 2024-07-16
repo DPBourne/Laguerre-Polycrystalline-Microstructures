@@ -3,7 +3,7 @@ MATLAB and Python code for generating 2D and 3D synthetic polycrystalline micros
 
 ## Getting started ##
 
-To use these MATLAB functions you must first install
+To use the MATLAB functions you must first install
 * [MATLAB-Voro](https://github.com/smr29git/MATLAB-Voro)
 * [MATLAB-SDOT](https://github.com/DPBourne/MATLAB-SDOT)
 * [MatGeom](https://github.com/mattools/matGeom) by David Legland
