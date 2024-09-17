@@ -7,6 +7,7 @@ To use the MATLAB functions you must first install
 * [MATLAB-Voro](https://github.com/smr29git/MATLAB-Voro)
 * [MATLAB-SDOT](https://github.com/DPBourne/MATLAB-SDOT)
 * [MatGeom](https://github.com/mattools/matGeom) by David Legland
+
 Replace the file `matGeom/meshes3d/intersectPlaneMesh.m` with the version in this repository.
 
 The Python examples use the library [pysdot](https://github.com/sd-ot/pysdot).
