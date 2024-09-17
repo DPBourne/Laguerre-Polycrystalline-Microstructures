@@ -10,4 +10,6 @@ The folder `Inverting_Laguerre_Tessellations_2024` contains examples from the pa
 
 * Bourne, D.P., Pearce, M. & Roper, S.M. (2024) Inverting Laguerre tessellations: Recovering tessellations from the volumes and centroids of their cells using optimal transport, *arXiv:2406.00871*. [PDF](https://arxiv.org/abs/2406.00871)
 
+The folder `Python_Examples` contains some Python notebooks.
+
 The other files in this directory are visualisation files used for the first two papers.
