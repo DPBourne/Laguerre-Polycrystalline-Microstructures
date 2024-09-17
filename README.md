@@ -1,5 +1,5 @@
 # LPM: Laguerre-Polycrystalline-Microstructures
-MATLAB and Python code for generating 2D and 3D synthetic polycrystalline microstructures using Laguerre tessellations, including fast algorithms for generating grains of prescribed volumes.
+MATLAB and Python code for generating 2D and 3D synthetic polycrystalline microstructures using Laguerre tessellations, including fast algorithms for generating grains of prescribed volumes using optimal transport theory.
 
 ## Getting started ##
 
